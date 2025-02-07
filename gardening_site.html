@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Services</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        .navbar {
+            background-color: #4CAF50;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: #45a049;
+        }
+        .container {
+            padding: 20px;
+        }
+        .landing-page, .about-page, .register-page, .login-page, .calendar-page {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        input[type="text"], input[type="password"], input[type="submit"], input[type="date"], input[type="time"] {
+            width: calc(100% - 24px);
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function showPage(pageId) {
+            var pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" onclick="showPage('landing-page')">Home</a>
+        <a href="#" onclick="showPage('about-page')">About</a>
+        <a href="#" onclick="showPage('register-page')">Register</a>
+        <a href="#" onclick="showPage('login-page')">Login</a>
+        <a href="#" onclick="showPage('calendar-page')">Book a Service</a>
+    </div>
+    <div class="container">
+        <div id="landing-page" class="page landing-page active">
+            <h1>Welcome to Gardening Services</h1>
+            <p>Your one-stop solution for all gardening needs.</p>
+        </div>
+        <div id="about-page" class="page about-page">
+            <h1>About Us</h1>
+            <p>We provide top-notch gardening services to keep your garden beautiful and healthy.</p>
+        </div>
+        <div id="register-page" class="page register-page">
+            <div class="form-container">
+                <h2>Register</h2>
+                <form action="/submit_registration" method="post">
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+        </div>
+        <div id="login-page" class="page login-page">
+            <div class="form-container">
+                <h2>Login</h2>
+                <form action="/submit_login" method="post">
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+        <div id="calendar-page" class="page calendar-page">
+            <div class="form-container">
+                <h2>Book a Service</h2>
+                <form action="/submit_booking" method="post">
+                    <input type="date" id="date" name="date" required>
+                    <input type="time" id="time" name="time" required>
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

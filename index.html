@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gardening Services</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <title>Flappy Bird</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      background: #70c5ce;
+    }
+  
+    canvas {
+      display: block;
+      image-rendering: pixelated;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+  
+  
+
 </head>
 <body>
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="register.html">Register</a>
-        <a href="login.html">Login</a>
-        <a href="calendar.html">Book a Service</a>
-    </div>
-    <div class="container">
-        <div class="landing-page">
-            <h1>Welcome to Gardening Services</h1>
-            <p>Your one-stop solution for all gardening needs.</p>
-        </div>
-    </div>
+  <canvas id="gameCanvas" width="480" height="640"></canvas>
+  <script src="game.js"></script>
 </body>
 </html>
